@@ -37,8 +37,8 @@ export default function PromptWindow({ onAnimationEnd, innerRef }) {
 
 
     return (
-        <div className="h-screen w-screen absolute top-0 left-0 flex justify-center items-center align-middle max-w-7xl">
-            <div className='m-auto'>
+        
+            <div>
                 <div ref={innerRef} className={(showResponse ? "animate-slide-out-top " : "") + "isolate block bg-gray-900 px-6 py-6 shadow-2xl mx-2 rounded-lg"}>
                     <div className="max-w-xl lg:max-w-lg">
                         <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center sm:text-left">Prompt:</h2>
@@ -62,8 +62,7 @@ export default function PromptWindow({ onAnimationEnd, innerRef }) {
                         </div>
                     </div>
                 </div>
-                <ResponseWindow/>
+                {showResponse && <ResponseWindow onAnimationEnd={onAnimationEnd}/>}
             </div>
-        </div>
     )
 }

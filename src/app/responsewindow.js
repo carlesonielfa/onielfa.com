@@ -10,10 +10,10 @@ let wordIndex = 0;
 let attrIndex = 0;
 let writeOrder = true;
 
-export default function ResponseWindow() {
+export default function ResponseWindow({onAnimationEnd}) {
     const [responseText, setResponseText] = useState(' '),
         [attributeText, setAttributeText] = useState(''),
-        [carat, setCarat] = useState('█'),
+        [carat, setCarat] = useState('▌'),
         [count, setCount] = useState(0),
         [ticking, setTicking] = useState(true);
 
@@ -45,17 +45,22 @@ export default function ResponseWindow() {
 
     useEffect(() => {
         const timer = setTimeout(() => ticking && updateText(), 1e2)
+        if(!ticking){
+            onAnimationEnd()
+        }
         return () => clearTimeout(timer)
     }, [count, ticking])
 
     return (
-        <div className="overflow-hidden transition-height duration-500 ease-in-out bg-gray-800 px-6 py-6 shadow-2xl mx-8 rounded-b-lg">
-            <div className="max-w-xl min-h-[3rem] lg:max-w-lg text-white font-mono text-sm">
-                {responseText}
-                <div>
-                    {attributeText}{carat}
+        <div className="animate-expand-height">
+            <div className="bg-gray-800 px-6 py-6 shadow-2xl mx-8 rounded-b-lg">
+                <div className="max-w-xl min-h-[3rem] lg:max-w-lg text-white font-mono text-sm">
+                    {responseText}{count < prefix.length && carat}
+                    <div>
+                        {attributeText}{count >= prefix.length && carat}
+                    </div>
+                    
                 </div>
-                
             </div>
         </div>
     );
