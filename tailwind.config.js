@@ -20,7 +20,7 @@ module.exports = {
         'slide-out-top': 'slide_out_top 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both',
         'expand-height': 'expand_height 1s ease',
         'appear': 'appear 1s ease 1s forwards',
-        'disappear': 'appear 1s ease forwards reverse',
+        'disappear': 'appear 1s ease 1s forwards reverse',
       },
       keyframes: {
         blink: {
