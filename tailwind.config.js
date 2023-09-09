@@ -21,6 +21,7 @@ module.exports = {
         'expand-height': 'expand_height 1s ease',
         'appear': 'appear 1s ease 1s forwards',
         'disappear': 'appear 1s ease 1s forwards reverse',
+        'text-popup': 'text_popup 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both'
       },
       keyframes: {
         blink: {
@@ -43,6 +44,10 @@ module.exports = {
           '0%': { opacity: 0},
           '100%': { opacity: 1},
         },
+        text_popup: {
+          '0%': { 'transform': 'translateY(0)', 'transform-origin': '50% 50%', 'text-shadow': 'none'},
+          '100%': { 'transform': 'translateY(-20px)', 'transform-origin': '50% 50%',  'text-shadow': '0 0.5px 0 #cccccc, 0 1px 0 #cccccc, 0 1.5px 0 #cccccc, 0 2px 0 #cccccc, 0 2.5px 0 #cccccc, 0 3px 0 #cccccc, 0 3.5px 0 #cccccc, 0 4px 0 #cccccc, 0 4.5px 0 #cccccc, 0 30px 30px rgba(0, 0, 0, 0.3)'}
+        }
       }
     },
   },
