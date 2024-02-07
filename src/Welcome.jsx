@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState, useLayoutEffect, useRef } from 'react';
-import ResponseWindow from './responsewindow';
+import ResponseWindow from './ResponseWindow';
 export default function PromptWindow({ onAnimationEnd, innerRef }) {
     const text = "Who is Carles Onielfa?"
     const [focusedInput, setFocusedInput] = useState(false),

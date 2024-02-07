@@ -1,11 +1,8 @@
-'use client'
-import { useEffect, useState, useRef, unmountComponentAtNode } from 'react';
-import Link from 'next/link';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-export default function About() {
+export default function App() {
 
   const links = [
     {
@@ -38,6 +35,16 @@ export default function About() {
       color: "red-400"
     },
   ]
+  function data_to_section(data) {
+    const cls = 'card-header-pill text-lg font-bold uppercase text-' + data.color;
+    console.log(cls);
+    return (
+      <div key={data.id} className="card mt-5 mx-auto">
+        <p className={cls}>{data.title}</p>
+        <div className='card-body'>{data.body}</div>
+      </div>
+    )
+  }
   return (
     <div className="bg-gray-100 flex-col min-h-screen">
       <div className="min-w-0  flex-1 px-6 py-11">
@@ -58,10 +65,7 @@ export default function About() {
         <div className="mt-5">
           {
             data.map((item) => (
-              <div key={item.id} className="card mt-5 mx-auto">
-                <p className={`card-header-pill text-lg drop-shadow text-${item.color} font-bold tracking-tight uppercase`}>{item.title}</p>
-                <div className='card-body'>{item.body}</div>
-              </div>
+              data_to_section(item)
             ))
           }
         </div>
