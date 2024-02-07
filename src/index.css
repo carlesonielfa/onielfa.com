@@ -8,13 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -47,10 +40,10 @@ body {
 }
 
 .card {
-  background: rgb(var(--background-end-rgb));
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 7px;
   max-width: 400px;
+  outline: white solid 1px;
 }
 .card-header {
   border-radius: 7px 7px 0 0;
@@ -65,5 +58,8 @@ body {
   margin-left: .5rem;
 }
 .card-body {
-  padding: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
 }

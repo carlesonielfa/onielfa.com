@@ -26,27 +26,25 @@ export default function App() {
       id: 1,
       title: "Highlighted Research",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      color: "indigo-400"
+      color: "text-white drop-shadow-xl"
     },
     {
       id: 2,
       title: "Professional Experience",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      color: "red-400"
+      color: ""
     },
   ]
   function data_to_section(data) {
-    const cls = 'card-header-pill text-lg font-bold uppercase text-' + data.color;
-    console.log(cls);
     return (
-      <div key={data.id} className="card mt-5 mx-auto">
-        <p className={cls}>{data.title}</p>
+      <div key={data.id} className="card mt-5 mx-auto backdrop-blur-lg">
+        <p className={'card-header-pill text-md font-bold uppercase ' + data.color}>{data.title}</p>
         <div className='card-body'>{data.body}</div>
       </div>
     )
   }
   return (
-    <div className="bg-gray-100 flex-col min-h-screen">
+    <div className="flex-col min-h-screen bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center">
       <div className="min-w-0  flex-1 px-6 py-11">
         <h2 className='hit-the-floor text-4xl text-white tracking-tight uppercase font-bold sm:text-6xl text-center'>
         Carles Onielfa
@@ -57,11 +55,11 @@ export default function App() {
         <div className="flex justify-center mt-5">
           {
             links.map((link) => (
-              <a key={link.id} href={`https://${link.url}`} target="_blank" className="text-3xl text-gray-300 mx-3 hover:text-gray-700" rel="noreferrer">{link.icon}</a>
+              <a key={link.id} href={`https://${link.url}`} target="_blank" className="text-3xl text-gray-200 mx-3 hover:text-gray-100" rel="noreferrer">{link.icon}</a>
             ))
           }
         </div>
-        <p className='text-center text-gray-400 text-sm mt-2'>carlesonielfa (at) gmail.com</p>
+        <p className='text-center text-gray-200 text-sm mt-2 font-bold font-mono'>carlesonielfa(at)gmail.com</p>
         <div className="mt-5">
           {
             data.map((item) => (
@@ -70,8 +68,8 @@ export default function App() {
           }
         </div>
       </div>
-      <footer className='text-gray-400 text-center text-sm opacity-50' >
-        Template by <a href="http://www.onielfa.com" className="text-gray-500">Carles Onielfa</a>
+      <footer className='text-gray-600 text-center text-sm opacity-50' >
+        Template by <a href="http://www.onielfa.com" className="text-gray-700">Carles Onielfa</a>
       </footer>
     </div>
   )
