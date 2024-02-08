@@ -1,7 +1,8 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-
+import ProjectsCarousel from './ProjectsCarousel.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function App() {
 
   const links = [
@@ -24,22 +25,22 @@ export default function App() {
   const data = [
     {
       id: 1,
-      title: "Highlighted Research",
-      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      color: "text-white drop-shadow-xl"
+      title: "Highlighted Projects",
+      body: <ProjectsCarousel />,
+      color: "text-white"
     },
     {
       id: 2,
       title: "Professional Experience",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      color: ""
+      color: "text-white"
     },
   ]
   function data_to_section(data) {
     return (
-      <div key={data.id} className="card mt-5 mx-auto backdrop-blur-lg">
-        <p className={'card-header-pill text-md font-bold uppercase ' + data.color}>{data.title}</p>
-        <div className='card-body'>{data.body}</div>
+      <div key={data.id} className="ccard mt-5 mx-auto backdrop-blur-lg text-white">
+        <p className={'ccard-header-pill text-md font-bold uppercase drop-shadow-xl ' + data.color}>{data.title}</p>
+        <div className='ccard-body'>{data.body}</div>
       </div>
     )
   }
