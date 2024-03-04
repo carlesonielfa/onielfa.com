@@ -34,12 +34,12 @@ function About() {
         return (
             <div key={key}>
             <h2 className='text-center text-base font-semibold'>{title}</h2>
-            <div className='flex flex-row w-full justify-center text-md text-center gap-8 mt-2 mb-2'>
+            <div className='flex flex-row w-full justify-center text-md text-center gap-8 mt-2 mb-2 font-bold text-sm sm:text-base items-center'>
                 {
                     body.map((item) => (
-                        <span class={text_color+" "+ring_color+" ring-1  rounded-md shadow-md py-1 px-2 bg-white/10 font-bold"}>
+                        <div class={text_color+" "+ring_color+" ring-1  rounded-md shadow-md py-1 px-2 bg-white/10"}>
                             {item}
-                        </span>
+                        </div>
                     ))
                 }
                 </div>
