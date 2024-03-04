@@ -66,13 +66,20 @@ export default function App() {
             <a>Side Quests</a>
         </div>
       </nav>
-      <div className="min-w-0  flex-1 px-6 py-8 sm:py-14">
+
+      <div className="min-w-0 flex-1 px-6 py-8 sm:py-14">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 sm:mt-8">
+        <img className="w-[130px] sm:w-[180px] rounded-full bg-white sm:p-1.5 p-1 shadow-lg" src="src/assets/photo.jpg"></img>
+        <div>
         <h2 className='hit-the-floor text-4xl text-white tracking-tight uppercase font-bold sm:text-6xl text-center'>
           Carles Onielfa
         </h2>
         <h3 className='hit-the-floor text-2xl text-white tracking-tight font-bold sm:text-4xl text-center'>
-          ML Research Engineer
+          Machine Learning Engineer
         </h3>
+        </div>
+        </div>
+
 
         <div className="flex justify-center mt-4 ">
           {
