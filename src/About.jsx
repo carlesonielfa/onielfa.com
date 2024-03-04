@@ -10,7 +10,7 @@ function About() {
         },
         {
             key: 1,   
-            title: "Passionate about bleeding-egdge Machine Learning in",
+            title: "Passionate about Machine Learning in",
             body: ["Language", "Vision", "Genomics"],
             text_color: "text-white",
             ring_color: "ring-white"
@@ -25,7 +25,7 @@ function About() {
         {
             key: 3,
             title: "Personal interests include",
-            body: ["GameDev", "Music Production", "Electronics"],
+            body: ["Game Development", "Music Production", "Electronic Projects"],
             text_color: "text-white",
             ring_color: "ring-white"
         },
