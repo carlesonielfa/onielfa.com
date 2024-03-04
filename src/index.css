@@ -1,1 +1,65 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.hit-the-floor {
+  text-shadow:
+    0 .005em 0 rgba(0, 0, 0, .2), 
+    0 .005em 0 currentColor,
+    
+    0 .01em 0 rgba(0, 0, 0, .25), 
+    0 .01em 0 currentColor, 
+    
+    0 .015em 0 rgba(0, 0, 0, .3),
+    0 .015em 0 currentColor,
+    
+    0 .02em 0 rgba(0, 0, 0, .35), 
+    0 .02em 0 currentColor,
+     
+    0 .025em 0 rgba(0, 0, 0, .4),
+    0 .025em 0 currentColor,
+    
+    0 .03em .005em rgba(0, 0, 0, .1), 
+    0 0 .025em rgba(0, 0, 0, .1), 
+    0 .005em .015em rgba(0, 0, 0, .3), 
+    0 .015em .025em rgba(0, 0, 0, .2), 
+    0 .025em .05em rgba(0, 0, 0, .25), 
+    0 .05em .05em rgba(0, 0, 0, .2), 
+    0 .1em .1em rgba(0, 0, 0, .15);
+}
+
+.ccard {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  max-width: 400px;
+  outline: white solid 1px;
+}
+.ccard-header {
+  border-radius: 7px 7px 0 0;
+  padding: .5rem .8rem;
+}
+.ccard-header-pill {
+  border-radius: 7px;
+  display: inline-block;
+  padding: .3rem .6rem;
+  margin-top: .5rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+}
+.ccard-body {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .8rem;
+  padding-right: .8rem;
+}

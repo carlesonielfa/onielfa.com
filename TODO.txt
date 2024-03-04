@@ -1,6 +1,0 @@
-Dark mode button
-Skills icons
-Portfolio
-Listen for window width change https://goshakkk.name/different-mobile-desktop-tablet-layouts-react/
-improve documentation
-Dynamic end of page blank space for scroll
