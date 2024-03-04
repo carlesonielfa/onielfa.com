@@ -53,6 +53,7 @@ export default function App() {
         <h3 className='hit-the-floor text-2xl text-white tracking-tight font-bold sm:text-4xl text-center'>
         ML Research Engineer
         </h3>
+        
         <div className="flex justify-center mt-5">
           {
             links.map((link) => (
@@ -61,13 +62,14 @@ export default function App() {
           }
         </div>
         <p className='text-center text-gray-200 text-sm mt-2 font-bold font-mono'>carlesonielfa(at)gmail.com</p>
-        <div className="mt-5">
+        {/*<div className="mt-5">
           {
             data.map((item) => (
               data_to_section(item)
             ))
           }
-        </div>
+        </div>*/}
+        
       </div>
       <footer className='text-gray-600 text-center text-sm opacity-50' >
         Template by <a href="http://www.onielfa.com" className="text-gray-700">Carles Onielfa</a>
