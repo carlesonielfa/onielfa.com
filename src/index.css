@@ -38,28 +38,3 @@ body {
     0 .05em .05em rgba(0, 0, 0, .2), 
     0 .1em .1em rgba(0, 0, 0, .15);
 }
-
-.ccard {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 7px;
-  max-width: 400px;
-  outline: white solid 1px;
-}
-.ccard-header {
-  border-radius: 7px 7px 0 0;
-  padding: .5rem .8rem;
-}
-.ccard-header-pill {
-  border-radius: 7px;
-  display: inline-block;
-  padding: .3rem .6rem;
-  margin-top: .5rem;
-  margin-right: .5rem;
-  margin-left: .5rem;
-}
-.ccard-body {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  padding-left: .8rem;
-  padding-right: .8rem;
-}

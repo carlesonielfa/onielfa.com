@@ -1,8 +1,11 @@
-.carousel-control-prev {
+div.carousel-indicators {
+    margin-bottom: 0;
+}
+a.carousel-control-prev {
     justify-content: start;
     width: auto;
 }
-.carousel-control-next {
+a.carousel-control-next {
     justify-content: start;
     width: auto;
 }

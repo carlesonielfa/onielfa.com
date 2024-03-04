@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-0.5 -0.5 397.5 530" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <image x="-0.5" y="-0.5" width="397.5" height="530" preserveAspectRatio="none" pointer-events="none" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnY9Imh0dHBzOi8vdmVjdGEuaW8vbmFubyIgd2lkdGg9IjE0LjY1OTk5OTg0NzQxMjExIiBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMTQuNjU5OTk5ODQ3NDEyMTEgMjAiPiYjeGE7CTxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+JiN4YTsJLnN0MHtmaWxsOiM0Mjg1ZjQ7fSYjeGE7CS5zdDF7ZmlsbDojNjY5ZGY2O30mI3hhOwkuc3Qye2ZpbGw6I2FlY2JmYTt9JiN4YTsJPC9zdHlsZT4mI3hhOwk8c3R5bGU+JiN4YTsJCS5Ee2ZpbGwtcnVsZTpldmVub2RkfSYjeGE7CTwvc3R5bGU+JiN4YTsJPHBhdGggZD0iTTcuMzMgMTUuMzV2LTMuMDFMMCA4LjQ0djMuMDF6bTAgNC42NXYtMy4wMUwwIDEzLjA5djMuMDF6IiBjbGFzcz0ic3QyIEQiLz4mI3hhOwk8cGF0aCBkPSJNMTQuNjYgOC40NGwtNy4zMyAzLjl2My4wMWw3LjMzLTMuOXptMCA0LjY1bC03LjMzIDMuOVYyMGw3LjMzLTMuOXoiIGNsYXNzPSJzdDEgRCIvPiYjeGE7CTxwYXRoIGQ9Ik03LjMzIDB2My4wMWw3LjMzIDMuOVYzLjl6IiBjbGFzcz0ic3QwIEQiLz4mI3hhOwk8cGF0aCBkPSJNMCA2LjkxbDcuMzMtMy45VjBMMCAzLjl6IiBjbGFzcz0iRCBzdDEiLz4mI3hhOwk8cGF0aCBkPSJNNy4zMyAxMC43OVY3Ljc3TDAgMy44N3YzLjAyeiIgY2xhc3M9IkQgc3QyIi8+JiN4YTsJPHBhdGggZD0iTTE0LjY2IDMuODdsLTcuMzMgMy45djMuMDJsNy4zMy0zLjl6IiBjbGFzcz0iRCBzdDEiLz4mI3hhOzwvc3ZnPg=="/>
+  </g>
+  <path style="fill: rgb(66, 133, 244);" d="M 55.151 130.814 L 82.52 145.108 L 82.248 224.936 L 55.151 210.856 L 55.151 130.814 Z"/>
+  <path style="fill: rgb(66, 133, 244);" d="M 135.516 416.859 L 162.885 431.153 L 162.613 510.981 L 135.516 496.901 L 135.516 416.859 Z"/>
+  <path style="fill: rgb(174, 203, 250);" d="M 226.822 270.467 L 254.191 256.173 L 253.919 176.345 L 226.822 190.425 L 226.822 270.467 Z" transform="matrix(-1, 0, 0, -1, 481.013, 446.812012)"/>
+  <path style="fill: rgb(174, 203, 250);" d="M 349.8 327.34 L 377.169 313.046 L 376.897 233.218 L 349.8 247.298 L 349.8 327.34 Z" transform="matrix(-1, 0, 0, -1, 726.968994, 560.557983)"/>
+  <path style="fill: rgb(174, 203, 250);" d="M 295.55 355.445 L 322.919 341.151 L 322.647 261.323 L 295.55 275.403 L 295.55 355.445 Z" transform="matrix(-1, 0, 0, -1, 618.469055, 616.768005)"/>
+</svg>
