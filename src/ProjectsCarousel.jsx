@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import { MdNavigateNext, MdNavigateBefore, MdOpenInNew } from "react-icons/md";
 import './ProjectsCarousel.css';
 function ProjectsCarousel() {
   const [index, setIndex] = useState(0);
@@ -22,25 +22,25 @@ function ProjectsCarousel() {
         subtitle: "Web-based platform for genomic variability visualization",
         link: "https://bioinformatics.cragenomica.es/projects/genovarview/",
         status: "Manuscript in preparation",
-        logo: "https://via.placeholder.com/150",
+        logo: "src/assets/genovarviewlogo.svg",
         tags: ["JavaScript", "Vue", "Bioinformatics"]
     }
   ];
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<MdNavigateNext/>} prevIcon={<MdNavigateBefore/>}>
+    <Carousel activeIndex={index} onSelect={handleSelect} nextIcon={<MdNavigateNext/>} prevIcon={<MdNavigateBefore/>} interval={10000}>
       {data.map((project, index) => (
         <Carousel.Item key={index}>
-            <div className='flex flex-col mx-4 mb-4'>
-                <div className='flex flex-row justify-center items-center gap-2'>
+            <div className='flex flex-col mx-4 mb-4 min-h-sm'>
+                <div className='flex flex-row justify-center items-center gap-2 mb-6 mt-2'>
                     <img
-                        className="w-10 bg-white rounded-full"
+                        className="w-12 bg-white rounded-full h-12 p-1" 
                         src={project.logo}
                         alt={project.title}
                     />
                     <h3 className='text-2xl'>{project.title}</h3>
                 </div>
-                <p>{project.subtitle}</p>
-                <a href={project.link} target="_blank" rel="noreferrer">More info</a>
+                <p className='mx-2 text-center'>{project.subtitle}
+                <a href={project.link} target="_blank" rel="noreferrer">  <MdOpenInNew className='inline'/></a></p>
             </div>
         </Carousel.Item>
       ))}
