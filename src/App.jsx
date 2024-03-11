@@ -16,7 +16,7 @@ export default function App() {
     },
     {
       id: "Resume",
-      url: "docs.google.com/document/d/14GXlDhuvXqE33IwdDtI7C-YggTsY5uB_kFjK1nRtydU/edit?usp=sharing",
+      url: "https://docs.google.com/document/d/e/2PACX-1vRknms-cu8IZc1x-tSkzVDA1tmIMUqvcO7j8naL6d3JyPlWKvU3cLBB9yscmdLdUbDHRTyljdp2VgAX/pub",
       icon: <FaFilePdf />
     },
     {
