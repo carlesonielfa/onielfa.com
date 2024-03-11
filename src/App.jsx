@@ -41,9 +41,9 @@ export default function App() {
   ]
   function data_to_section(data) {
     return (
-      <div key={data.id} className="p-2 border-t-2 border-b-2 border-b-gray-500 shadow-md ring-white rounded-2xl max-w-[510px] mt-4 mx-auto text-white">
+      <div key={data.id} className="p-2 border-t-2 border-b-2 border-b-gray-500 border-t-gray-300 shadow-md rounded-2xl max-w-[510px] mt-4 mx-auto text-white bg-gray-400/50">
         <p className={'text-2xl text-center font-bold drop-shadow-md sm:text-3xl ' + data.color}>{data.title}</p>
-        <div className=' py-2 px-3 '>
+        <div className='py-2 px-3'>
           {
             // If the body is an array, render each element as a paragraph
             Array.isArray(data.body) ? data.body.map((item, index) => (
@@ -68,7 +68,7 @@ export default function App() {
       </nav>*/}
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 sm:mt-8">
-          <img className="w-[130px] sm:w-[180px] rounded-full bg-white sm:p-1.5 p-1 shadow-lg" src="photo.jpg"></img>
+          <img className="w-[130px] sm:w-[180px] rounded-full bg-white sm:p-1.5 p-1 shadow-md" src="photo.jpg"></img>
           <div>
             <h2 className='hit-the-floor text-4xl text-white tracking-tight uppercase font-bold sm:text-6xl text-center'>
             Carles Onielfa
@@ -85,7 +85,7 @@ export default function App() {
             ))
           }
         </div>
-        <p className='text-center text-gray-100 text-sm mt-2 font-bold font-mono'>carlesonielfa(at)gmail.com</p>
+        <p className='text-center text-gray-100 text-sm mt-2 font-bold font-mono'>carles(at)onielfa.com</p>
         {<div className="my-2">
           {
             data.map((item) => (
