@@ -16,7 +16,7 @@ export default function App() {
     },
     {
       id: "Resume",
-      url: "https://docs.google.com/document/d/e/2PACX-1vRknms-cu8IZc1x-tSkzVDA1tmIMUqvcO7j8naL6d3JyPlWKvU3cLBB9yscmdLdUbDHRTyljdp2VgAX/pub",
+      url: "docs.google.com/document/d/e/2PACX-1vRknms-cu8IZc1x-tSkzVDA1tmIMUqvcO7j8naL6d3JyPlWKvU3cLBB9yscmdLdUbDHRTyljdp2VgAX/pub",
       icon: <FaFilePdf />
     },
     {
@@ -55,8 +55,9 @@ export default function App() {
     )
   }
   return (
-
+    
     <div className="flex-col min-h-screen bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center pt-3">
+      
       {/*<nav className="navbar sticky-top w-full shadow-md justify-center py-1 items-stretch bg-white/60 hidden">
         <div className="max-w-[700px] w-full flex flex-row text-xs justify-evenly sm:text-base uppercase tracking-widest text-gray-600 gap-2 sm:px-12 text-center">
             <a>About</a>
