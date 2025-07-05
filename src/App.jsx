@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -5,6 +6,7 @@ import ProjectsCarousel from './ProjectsCarousel.jsx';
 import About from "./About.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from 'react-bootstrap';
+import Qwen3TokenHeatmap from "./articles/Qwen3TokenHeatmap.jsx";
 
 export default function App() {
 
@@ -55,49 +57,42 @@ export default function App() {
     )
   }
   return (
-    
-    <div className="flex-col min-h-screen bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center pt-3">
-      
-      {/*<nav className="navbar sticky-top w-full shadow-md justify-center py-1 items-stretch bg-white/60 hidden">
-        <div className="max-w-[700px] w-full flex flex-row text-xs justify-evenly sm:text-base uppercase tracking-widest text-gray-600 gap-2 sm:px-12 text-center">
-            <a>About</a>
-            <p>·</p>
-            <a>Projects</a>
-            <p>·</p>
-            <a>Side Quests</a>
-        </div>
-      </nav>*/}
-
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 sm:mt-8">
-          <img className="w-[130px] sm:w-[180px] rounded-full bg-white sm:p-1.5 p-1 shadow-md" src="photo.jpg"></img>
-          <div>
-            <h2 className='hit-the-floor text-4xl text-white tracking-tight uppercase font-bold sm:text-6xl text-center'>
-            Carles Onielfa
-            </h2>
-            <h3 className='hit-the-floor text-2xl text-white tracking-tight font-bold sm:text-4xl text-center'>
-              Machine Learning Engineer
-            </h3>
+      <Routes>
+        <Route path="/articles/qwen3_token_heatmap" element={<Qwen3TokenHeatmap />} />
+        <Route path="/" element={
+          <div className="flex-col min-h-screen bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center pt-3">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 sm:mt-8">
+              <img className="w-[130px] sm:w-[180px] rounded-full bg-white sm:p-1.5 p-1 shadow-md" src="photo.jpg"></img>
+              <div>
+                <h2 className='hit-the-floor text-4xl text-white tracking-tight uppercase font-bold sm:text-6xl text-center'>
+                Carles Onielfa
+                </h2>
+                <h3 className='hit-the-floor text-2xl text-white tracking-tight font-bold sm:text-4xl text-center'>
+                  Machine Learning Engineer
+                </h3>
+              </div>
+            </div>
+            <div className="flex justify-center mt-3">
+              {
+                links.map((link) => (
+                  <a key={link.id} href={`https://${link.url}`} target="_blank" className="text-3xl text-gray-200 mx-3 hover:text-white" rel="noreferrer">{link.icon}</a>
+                ))
+              }
+            </div>
+            <p className='text-center text-gray-100 text-sm mt-2 font-bold font-mono'>carles(at)onielfa.com</p>
+            <div className="my-2">
+              {
+                data.map((item) => (
+                  data_to_section(item)
+                ))
+              }
+            </div>
+            <div className="my-auto"/>
+            <footer className='text-gray-200 text-center text-sm opacity-50 my-2' >
+              Template by <a href="http://www.onielfa.com" className="text-gray-100 font-semibold">Carles Onielfa</a>
+            </footer>
           </div>
-        </div>
-        <div className="flex justify-center mt-3">
-          {
-            links.map((link) => (
-              <a key={link.id} href={`https://${link.url}`} target="_blank" className="text-3xl text-gray-200 mx-3 hover:text-white" rel="noreferrer">{link.icon}</a>
-            ))
-          }
-        </div>
-        <p className='text-center text-gray-100 text-sm mt-2 font-bold font-mono'>carles(at)onielfa.com</p>
-        {<div className="my-2">
-          {
-            data.map((item) => (
-              data_to_section(item)
-            ))
-          }
-        </div>}
-      <div className="my-auto"/>
-      <footer className='text-gray-200 text-center text-sm opacity-50 my-2' >
-        Template by <a href="http://www.onielfa.com" className="text-gray-100 font-semibold">Carles Onielfa</a>
-      </footer>
-    </div>
+        } />
+      </Routes>
   )
 }
