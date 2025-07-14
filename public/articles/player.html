@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plyr test</title>
+
+  <!-- Plyr look-and-feel -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+
+</head>
+<body>
+
+  <!-- Your video -->
+  <video id="plyr-video" playsinline controls>
+    <source src="https://storage.googleapis.com/onielfa.com/articles/qwen3-span-relevance/ProjectVideo.mp4"
+            type="video/mp4">
+  </video>
+
+  <!-- Load Plyr, then initialise -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    /* plain old JS – no RequireJS, no Jupyter quirks */
+    const player = new Plyr('#plyr-video',
+      {
+        controls: [
+          'progress', // The progress bar
+          'play', // Play/pause playback
+          'current-time', // The current time of playback
+          'fullscreen', // Toggle fullscreen
+        ]
+      });
+    console.log('Plyr ready –', player.version);
+  </script>
+</body>
+</html>
+<script>
+  const chapters = [0, 8, 15.5, 22, 28.4, 38.5, 41, 44];   // seconds
+  let targetChapterReached = true;
+  /* helper: current chapter index */
+  const idx = () => chapters.reduce((i, t, k) =>
+      player.currentTime >= t - .05 ? k : i, 0);
+
+  const makeBtn = (txt, fn) => {
+    const b = document.createElement('button');
+    b.className = 'plyr__control';
+    b.textContent = txt;
+    b.onclick = fn;
+    return b;
+  };
+/* next */
+  player.elements.controls.prepend(makeBtn('⏩', () => {
+    const i = idx();
+    if (i < chapters.length - 1) {
+      if (!targetChapterReached) {
+        player.pause();
+        player.currentTime = chapters[Math.max(0, idx() + 1)];
+      }
+      const stop = chapters[i + 1];
+      player.play();
+      targetChapterReached = false;
+      const stopAt = () => {
+        if (player.currentTime >= stop - 0.05) {
+          player.pause();
+          player.off('timeupdate', stopAt);
+          targetChapterReached = true;
+        }
+      };
+      player.on('timeupdate', stopAt);
+    }
+  }));
+  /* previous */
+  player.elements.controls.prepend(makeBtn('⏪', () => {
+    player.pause();
+    player.currentTime = chapters[Math.max(0, idx() - 1)];
+  }));
+
+  
+</script>
