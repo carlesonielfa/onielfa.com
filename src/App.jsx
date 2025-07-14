@@ -6,7 +6,8 @@ import ProjectsCarousel from './ProjectsCarousel.jsx';
 import About from "./About.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar } from 'react-bootstrap';
-import Qwen3TokenHeatmap from "./articles/Qwen3TokenHeatmap.jsx";
+import Qwen3SpanExtraction from "./articles/Qwen3SpanExtraction.jsx";
+import Articles from "./Articles.jsx";
 
 export default function App() {
 
@@ -34,6 +35,12 @@ export default function App() {
       body: <About />,
       color: "text-white"
     },
+    {
+      id: 1,
+      title: "Blogs and Articles",
+      body: <Articles />,
+      color: "text-white"
+    }
     /*{
       id: 1,
       title: "Highlighted Projects",
@@ -58,7 +65,7 @@ export default function App() {
   }
   return (
       <Routes>
-        <Route path="/articles/qwen3_token_heatmap" element={<Qwen3TokenHeatmap />} />
+        <Route path="/articles/qwen3_span_extraction" element={<Qwen3SpanExtraction />} />
         <Route path="/" element={
           <div className="flex-col min-h-screen bg-gradient-to-b from-gray-300 to-gray-400 flex items-center justify-center pt-3">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 sm:mt-8">

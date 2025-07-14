@@ -18,7 +18,7 @@ function About() {
         {
             key: 2,
             title: "Currently developing",
-            body: ["AI-powered tools for genomics research."],
+            body: ["Cutting-edge Machine Learning for Enterprise RAG-as-a-service "],
             text_color: "text-white",
             ring_color: "ring-white"
         },
