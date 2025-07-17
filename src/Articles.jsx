@@ -5,7 +5,7 @@ const articles = [
 		key: 0,
 		title: "Can we assess span-level relevance with dense embedding models?",
 		url: "/articles/qwen3_span_extraction",
-		date: "2024-06-01",
+		date: "2025-07-18",
 	},
 ];
 

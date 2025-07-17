@@ -1,5 +1,18 @@
 <!doctype html>
+<style>
+  /* keep SVG nicely sized and inheriting Plyr colours */
+  .plyr__control svg {
+    width: 20px;
+    /* tweak to taste */
+    height: 20px;
+    pointer-events: none;
+    /* clicks hit the button, not the SVG */
+    fill: currentColor;
+    /* match Plyr's icon colour */
+  }
+</style>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Plyr test</title>
@@ -8,12 +21,11 @@
   <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
 
 </head>
+
 <body>
 
   <!-- Your video -->
   <video id="plyr-video" playsinline controls>
-    <source src="https://storage.googleapis.com/onielfa.com/articles/qwen3-span-relevance/ProjectVideo.mp4"
-            type="video/mp4">
   </video>
 
   <!-- Load Plyr, then initialise -->
@@ -32,23 +44,48 @@
     console.log('Plyr ready –', player.version);
   </script>
 </body>
+
 </html>
 <script>
-  const chapters = [0, 8, 15.5, 22, 28.4, 38.5, 41, 44];   // seconds
+  const qs = new URLSearchParams(window.location.search);
+  const chapters = (qs.get('chapters') ?? '')
+    .split(',')
+    .filter(Boolean)
+    .map(parseFloat);
+  const videoSrc = qs.get('video') || '';        // full URL
+  const videoEl = document.getElementById('plyr-video');
+  if (videoSrc) {
+    const srcEl = document.createElement('source');
+    srcEl.src = videoSrc;
+    srcEl.type = 'video/mp4';              // or look at file‑ext
+    videoEl.appendChild(srcEl);
+  }
+
+  if (chapters.length === 0)
+    chapters.push(0);
   let targetChapterReached = true;
   /* helper: current chapter index */
   const idx = () => chapters.reduce((i, t, k) =>
-      player.currentTime >= t - .05 ? k : i, 0);
+    player.currentTime >= t - .05 ? k : i, 0);
 
-  const makeBtn = (txt, fn) => {
-    const b = document.createElement('button');
-    b.className = 'plyr__control';
-    b.textContent = txt;
-    b.onclick = fn;
-    return b;
+  const PATH_FWD = "M4 4l8 8-8 8V4zm8 0l8 8-8 8V4z";
+  const PATH_BACK = "M20 4l-8 8 8 8V4zm-8 0L4 12l8 8V4z";
+
+  /* helper to make a Plyr‑styled button with an SVG icon */
+  const makeBtn = (path, aria, fn) => {
+    const btn = document.createElement('button');
+    btn.className = 'plyr__control';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', aria);
+    btn.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="${path}"></path>
+      </svg>`;
+    btn.onclick = fn;
+    return btn;
   };
-/* next */
-  player.elements.controls.prepend(makeBtn('⏩', () => {
+  /* next */
+  player.elements.controls.prepend(makeBtn(PATH_FWD, 'Next chapter', () => {
     const i = idx();
     if (i < chapters.length - 1) {
       if (!targetChapterReached) {
@@ -69,10 +106,10 @@
     }
   }));
   /* previous */
-  player.elements.controls.prepend(makeBtn('⏪', () => {
+  player.elements.controls.prepend(makeBtn(PATH_BACK, 'Previous chapter', () => {
     player.pause();
     player.currentTime = chapters[Math.max(0, idx() - 1)];
   }));
 
-  
+
 </script>
